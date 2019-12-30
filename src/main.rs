@@ -15,7 +15,6 @@ fn main() {
     println!("Lexed Data: {:?}", lexed);
 }
 
-#[allow(dead_code, unused_variables)]
 fn lexer(line: String) -> Vec<(Token, String)> {
     let mut lexed_information = Vec::new();
     let tokens: Vec<&str> = line.split_whitespace().collect();
