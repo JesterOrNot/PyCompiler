@@ -15,16 +15,17 @@ fn lexer(line: &str) {
 }
 
 pub enum Tokens {
-    Keyword,
-    Comment,
-    Operator,
-    Identifier,
-    OpenDelimiter,
+    Boolean,
+    Byte,
     CloseDelimiter,
-    Integer,
+    Comment,
     Float,
-    Str,
+    Identifier,
+    Integer,
+    Keyword,
     List,
     NoneType,
-    Boolean
+    Operator,
+    OpenDelimiter,
+    Str,
 }
