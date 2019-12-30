@@ -21,4 +21,10 @@ pub enum Tokens {
     Identifier,
     OpenDelimiter,
     CloseDelimiter,
+    Integer,
+    Float,
+    Str,
+    List,
+    NoneType,
+    Boolean
 }
