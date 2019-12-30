@@ -1,6 +1,7 @@
 use std::cmp::{Eq, PartialEq};
-use std::collections::HashMap;
+// use std::collections::{HashMap,HashSet};
 use std::env::args;
+use std::fmt::Debug;
 use std::hash::Hash;
 use std::string::String;
 
@@ -11,15 +12,31 @@ fn main() {
     } else {
         println!("\x1b[0;31mError: \x1b[0mPlease Specify a file\n\x1b[1;32mUsage:\x1b[0m py_compiler [filename]");
     }
+    let lexed = lexer(String::from("True False hiii True g"));
+    println!("Keys: {:?}", lexed);
 }
 
 #[allow(dead_code, unused_variables)]
-fn lexer(line: &str) -> HashMap<Token, String> {
-    let lexed_information: HashMap<Token, String> = HashMap::new();
+fn lexer(line: String) -> Vec<(Token, String)> {
+    let mut lexed_information = Vec::new();
+    let tokens: Vec<&str> = line.split_whitespace().collect();
+    let mut values = vec![];
+    for i in &tokens {
+        &values.push(i);
+    }
+    for &token in values.clone() {
+        if token == "True" {
+            lexed_information.push((Token::Boolean, String::from("True")));
+        } else if token == "False" {
+            lexed_information.push((Token::Boolean, String::from("False")));
+        } else {
+            lexed_information.push((Token::Unknown, String::from(token)));
+        }
+    }
     return lexed_information;
 }
 
-#[derive(Hash, Eq, PartialEq)]
+#[derive(Hash, Eq, PartialEq, Debug)]
 pub enum Token {
     Boolean,
     Byte,
@@ -40,4 +57,5 @@ pub enum Token {
     Set,
     Str,
     Tuple,
+    Unknown,
 }
