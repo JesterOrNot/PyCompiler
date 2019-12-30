@@ -1,7 +1,11 @@
-use std::env;
+use std::cmp::{Eq, PartialEq};
+use std::collections::HashMap;
+use std::env::args;
+use std::hash::Hash;
+use std::string::String;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args: Vec<String> = args().collect();
     if args.len() >= 2 {
         let _file_name = args[1].clone();
     } else {
@@ -10,11 +14,13 @@ fn main() {
 }
 
 #[allow(dead_code, unused_variables)]
-fn lexer(line: &str) {
-    //
+fn lexer(line: &str) -> HashMap<Token, String> {
+    let lexed_information: HashMap<Token, String> = HashMap::new();
+    return lexed_information;
 }
 
-pub enum Tokens {
+#[derive(Hash, Eq, PartialEq)]
+pub enum Token {
     Boolean,
     Byte,
     ByteArray,
