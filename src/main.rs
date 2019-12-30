@@ -13,7 +13,7 @@ fn main() {
         println!("\x1b[0;31mError: \x1b[0mPlease Specify a file\n\x1b[1;32mUsage:\x1b[0m py_compiler [filename]");
     }
     let lexed = lexer(String::from("True False hiii True g"));
-    println!("Keys: {:?}", lexed);
+    println!("Lexed Data: {:?}", lexed);
 }
 
 #[allow(dead_code, unused_variables)]
