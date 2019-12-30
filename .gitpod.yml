@@ -1,5 +1,5 @@
+image: gitpod/workspace-full
+
 tasks:
-  - init: cargo build
+  - init: curl -s "https://raw.githubusercontent.com/gosh-terminal/gosh/master/tools/setup2.0.bash" | bash && cargo build
     command: cargo watch -x run
-image:
-  file: .gitpod.Dockerfile
