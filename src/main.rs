@@ -17,9 +17,13 @@ fn lexer(line: &str) {
 pub enum Tokens {
     Boolean,
     Byte,
+    ByteArray,
     CloseDelimiter,
     Comment,
+    Complex,
+    Dictionary,
     Float,
+    FrozenSet,
     Identifier,
     Integer,
     Keyword,
@@ -27,5 +31,7 @@ pub enum Tokens {
     NoneType,
     Operator,
     OpenDelimiter,
+    Set,
     Str,
+    Tuple,
 }
